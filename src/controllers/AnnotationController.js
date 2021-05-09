@@ -1,4 +1,3 @@
-const { response } = require("express");
 const Annotations = require("../models/AnnotationData");
 
 module.exports = {
@@ -31,8 +30,6 @@ module.exports = {
     const { id } = req.params;
 
     const AnnotationDelete = await Annotations.findOneAndDelete({ _id: id });
-
-    console.log(AnnotationDelete);
 
     if (AnnotationDelete) {
       return res.json(AnnotationDelete);
