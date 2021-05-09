@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
+require("dotenv").config({ path: "./variables.env" });
 
-const db_config =
-  "mongodb+srv://victor:Rafagarrafa1603@cluster0.wogka.mongodb.net/annotations?retryWrites=true&w=majority";
+const db_config = process.env.DB_CONNECT;
 
 const connection = mongoose.connect(db_config, {
   useNewUrlParser: true,
